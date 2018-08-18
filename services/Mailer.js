@@ -9,7 +9,13 @@ class Mailer extends helper.Mail {
     this.from_email = new helper.Email('no-reply@emaily.com');
     this.subject = subject;
     this.body = new helper.Content('text/html', content);
-    this.recipients = this.formatAddress(recipients);
+    this.recipients = this.formatAddresses(recipients);
+  }
+
+  formatAddresses(recipients) {
+    return recipients.map(({ email }) => {
+      return new helper.Email(email);
+    });
   }
 }
 
