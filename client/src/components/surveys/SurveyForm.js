@@ -1,4 +1,5 @@
 //SurveyForm shows a form for a user to add input
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import SurveyField from './SurveyField';
@@ -12,6 +13,14 @@ const FIELDS = [
 
 class SurveyForm extends Component {
   renderFields() {
+    return _.map(FIELDS, ({ label, name }) =>
+      <Field
+        key={name}
+        component={SurveyField}
+        type="text"
+        label={label}
+        name={name}
+      />
     );
   }
 
