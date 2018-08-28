@@ -33,6 +33,7 @@ class SurveyForm extends Component {
           {this.renderFields()}
           <button type="submit" className="teal btn-flat right white-text">
             Next
+            <i className="material-icons right">done</i>
           </button>
         </form>
       </div>
