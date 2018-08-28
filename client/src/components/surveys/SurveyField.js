@@ -2,10 +2,12 @@
 // label and text input
 import React from 'react';
 
-export default() => {
+export default({ input }) => { 
   return (
     <div>
-      <input />
+      {/* the next line is equivalent to...
+      <input onBlur={input.onBlur} onChange={input.onChange} /> */}
+      <input { ...input }/>
     </div>
   );
 }
