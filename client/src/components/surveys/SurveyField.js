@@ -9,7 +9,7 @@ export default({ input, label, meta: { error, touched } }) => {
       {/* the next line is equivalent to...
       <input onBlur={input.onBlur} onChange={input.onChange} /> */}
       <input { ...input }/>
-      {meta.error}
+      { touched && error }
     </div>
   );
 }
