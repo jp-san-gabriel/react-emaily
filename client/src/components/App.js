@@ -15,7 +15,6 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
         <BrowserRouter>
           <div>
             <Header />
@@ -24,7 +23,6 @@ class App extends Component {
             <Route path="/surveys/new" component={SurveyNew} />
           </div>
         </BrowserRouter>
-      </div>
     );
   }
 };
