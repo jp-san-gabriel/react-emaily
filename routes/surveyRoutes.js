@@ -24,7 +24,8 @@ module.exports = app => {
         return { email, surveyId: match.surveyId, choice: match.choice };
       }
     });
-    console.log(events);
+
+    const compactEvents = _.compact(events);
   });
 
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
